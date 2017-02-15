@@ -32,7 +32,7 @@
                                     <offsetWrapper key="textShadowOffset" horizontal="0.0" vertical="0.0"/>
                                 </textAttributes>
                                 <items>
-                                    <navigationItem id="NC5-q0-o8c"/>
+                                    <navigationItem title="Lodjinha" id="NC5-q0-o8c"/>
                                 </items>
                             </navigationBar>
                             <tabBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pUJ-p9-JXg">
@@ -40,7 +40,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <items>
-                                    <tabBarItem title="Home" image="homeActive" id="NYT-ne-QuL"/>
+                                    <tabBarItem title="Home" image="homeActive" selectedImage="homeActive" id="NYT-ne-QuL"/>
                                     <tabBarItem systemItem="mostViewed" id="kDJ-3K-16p"/>
                                 </items>
                             </tabBar>
@@ -48,7 +48,9 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
+                        <outlet property="homeTabBarButton" destination="NYT-ne-QuL" id="kwB-X7-Jdx"/>
                         <outlet property="navBar" destination="q6D-he-iP0" id="be7-MC-dPF"/>
+                        <outlet property="tabBar" destination="pUJ-p9-JXg" id="gYK-ho-RJT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -18,9 +18,14 @@ extension UIApplication {
 class ViewController: UIViewController {
     
     @IBOutlet var navBar: UINavigationBar!
+    @IBOutlet var tabBar: UITabBar!
+    @IBOutlet var homeTabBarButton: UITabBarItem!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Set home button active
+        homeTabBarButton.image = UIImage.init(named: "homeActive")
         
         // Set color of navigation bar
         navBar?.isTranslucent = false
