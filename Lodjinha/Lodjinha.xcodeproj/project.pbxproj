@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B00DC4A1E54CDF6000EB3D4 /* Pacifico-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7B00DC491E54CDF5000EB3D4 /* Pacifico-Regular.ttf */; };
 		7B763C801E549E93003C9D6D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B763C7F1E549E93003C9D6D /* AppDelegate.swift */; };
 		7B763C821E549E93003C9D6D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B763C811E549E93003C9D6D /* ViewController.swift */; };
 		7B763C851E549E93003C9D6D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B763C831E549E93003C9D6D /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7B00DC491E54CDF5000EB3D4 /* Pacifico-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Pacifico-Regular.ttf"; path = "../../../../Downloads/Pacifico/Pacifico-Regular.ttf"; sourceTree = "<group>"; };
 		7B763C7C1E549E93003C9D6D /* Lodjinha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lodjinha.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B763C7F1E549E93003C9D6D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7B763C811E549E93003C9D6D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -74,9 +76,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7B00DC4B1E54CEBF000EB3D4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7B00DC491E54CDF5000EB3D4 /* Pacifico-Regular.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		7B763C731E549E93003C9D6D = {
 			isa = PBXGroup;
 			children = (
+				7B00DC4B1E54CEBF000EB3D4 /* Resources */,
 				7B763C7E1E549E93003C9D6D /* Lodjinha */,
 				7B763C931E549E93003C9D6D /* LodjinhaTests */,
 				7B763C9E1E549E94003C9D6D /* LodjinhaUITests */,
@@ -236,6 +247,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B763C8A1E549E93003C9D6D /* LaunchScreen.storyboard in Resources */,
+				7B00DC4A1E54CDF6000EB3D4 /* Pacifico-Regular.ttf in Resources */,
 				7B763C871E549E93003C9D6D /* Assets.xcassets in Resources */,
 				7B763C851E549E93003C9D6D /* Main.storyboard in Resources */,
 			);
@@ -514,6 +526,7 @@
 				7B763CA61E549E94003C9D6D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7B763CA71E549E94003C9D6D /* Build configuration list for PBXNativeTarget "LodjinhaTests" */ = {
 			isa = XCConfigurationList;
@@ -522,6 +535,7 @@
 				7B763CA91E549E94003C9D6D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7B763CAA1E549E94003C9D6D /* Build configuration list for PBXNativeTarget "LodjinhaUITests" */ = {
 			isa = XCConfigurationList;
@@ -530,6 +544,7 @@
 				7B763CAC1E549E94003C9D6D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

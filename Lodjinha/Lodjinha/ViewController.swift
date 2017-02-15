@@ -8,11 +8,34 @@
 
 import UIKit
 
+
+extension UIApplication {
+    var statusBarView: UIView {
+        return (value(forKey: "statusBar") as? UIView)!
+    }
+}
+
 class ViewController: UIViewController {
+    
+    @IBOutlet var navBar: UINavigationBar!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        // Set color of navigation bar
+        navBar?.isTranslucent = false
+        navBar?.isOpaque = true
+        UIApplication.shared.statusBarView.backgroundColor = navBar?.backgroundColor
+        
+        // Set navigation bar logo
+//        navBar?.setBackgroundImage(UIImage.init(named: "logoNavbar"), for: .topAttached, barMetrics: .default)
+//        navBar?.sizeToFit()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        UIApplication.shared.statusBarStyle = UIStatusBarStyle.default
     }
 
     override func didReceiveMemoryWarning() {
@@ -22,4 +45,8 @@ class ViewController: UIViewController {
 
 
 }
+
+
+
+
 
