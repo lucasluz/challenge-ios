@@ -37,10 +37,31 @@ class RequestService {
                         
                         if let json = self.self.parseJSON(from: d, s: structure) {
                             
-                            DispatchQueue.main.asyncAfter(deadline: time, execute: {
-                                view.putBanners(bs: json as! BannerStruct)
-                            })
+                            switch structure {
+                                case is BannerStruct.Type:
+                                    DispatchQueue.main.asyncAfter(deadline: time, execute: {
+                                        view.putBanners(bs: json as! BannerStruct)
+                                    })
+                                    
+                                    break
+                                    
+                                case is CategoryStruct.Type:
+                                    DispatchQueue.main.asyncAfter(deadline: time, execute: {
+                                        view.putCategories(cat: json as! CategoryStruct)
+                                    })
+                                    break
+                                
+                                case is TopSeller.Type:
+                                    DispatchQueue.main.asyncAfter(deadline: time, execute: {
+                                        view.putCategories(cat: json as! TopSeller)
+                                    })
+                                    break
+                                
+                                default: break
+                            }
+
                         } else {
+                            print("ERRO JSON: \(dataStr)")
                             print("Error parsing json")
                         }
                     } else {
@@ -63,9 +84,13 @@ class RequestService {
             let json = try JSONSerialization.jsonObject(with: data) as! [String: Any]
             
             switch s {
-            case is BannerStruct.Type:
-                return self.getBanners(jsonArray: json)
-            default:
+                case is BannerStruct.Type:
+                    return self.getBanners(jsonArray: json)
+                
+                case is CategoryStruct.Type:
+                    return self.getCategories(jsonArray: json)
+                
+                default:
                 print("service undefined")
                 return nil
             }
@@ -74,6 +99,7 @@ class RequestService {
             return nil
         }
     }
+    
     
     func getBanners(jsonArray: [String: Any]) -> BannerStruct? {
         var bs = BannerStruct()
@@ -84,6 +110,28 @@ class RequestService {
         }
         
         return bs
+    }
+    
+    func getCategories(jsonArray: [String: Any]) -> CategoryStruct? {
+        var cat = CategoryStruct()
+        
+        for f in jsonArray["data"] as! NSArray {
+            let catFields = CategoryStruct.Fields.init(dict: f as! NSDictionary)
+            cat.data.append(catFields)
+        }
+        
+        return cat
+    }
+    
+    func getTopSellers(jsonArray: [String: Any]) -> TopSeller? {
+        var ts = TopSeller()
+        
+        for f in jsonArray["data"] as! NSArray {
+            let tpFields = TopSeller.Fields.init(dict: f as! NSDictionary)
+            ts.data.append(tsFields)
+        }
+        
+        return ts
     }
     
     

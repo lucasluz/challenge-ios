@@ -23,16 +23,30 @@ class ViewController: UIViewController {
     
     @IBOutlet var bannerImageView: UIImageView!
     @IBOutlet var bannerPgCtrl: UIPageControl!
+    @IBOutlet var activityBannerLoading: UIActivityIndicatorView!
+    
+    @IBOutlet var categoriesScrollView: UIScrollView!
+    @IBOutlet var activityCategoriesLoading: UIActivityIndicatorView!
     
     @IBOutlet var productsTableView: UITableView!
     
+    // Banners
     var bannerImages = Array<UIImage>()
     var bannerLinks = Array<String>()
-    var currentImageIndex = 0
+    var currentBannerIndex = 0
+    
+    // Categories
+    var categoriesImages = Array<UIImage>()
+    var categoriesLinks = Array<String>()
+    var categoriesDescriptions = Array<String>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        loadHomeView();
+    }
+    
+    public func loadHomeView() {
         // Set home button active
         homeTabBarButton.image = UIImage.init(named: "homeActive")
         
@@ -42,21 +56,39 @@ class ViewController: UIViewController {
         UIApplication.shared.statusBarView.backgroundColor = navBar?.backgroundColor
         
         // Set navigation bar logo
-//        navBar?.setBackgroundImage(UIImage.init(named: "logoNavbar"), for: .topAttached, barMetrics: .default)
-//        navBar?.sizeToFit()
+        //        navBar?.setBackgroundImage(UIImage.init(named: "logoNavbar"), for: .topAttached, barMetrics: .default)
+        //        navBar?.sizeToFit()
         
-
-        // Request banners
+        
+        // create Request for all webservices
         let rs = RequestService()
+        
+        // Activate spinners
+        activityBannerLoading.isHidden = false
+        activityBannerLoading.hidesWhenStopped = true
+        activityBannerLoading.startAnimating()
+        
+        activityCategoriesLoading.isHidden = false
+        activityCategoriesLoading.hidesWhenStopped = true
+        activityCategoriesLoading.startAnimating()
+        
+        // Request banners
         rs.getJSONData(dataType: WebServicesEnum.banner.rawValue, structure: BannerStruct.self, view: self)
+        
+        // Request categories
+        rs.getJSONData(dataType: WebServicesEnum.categoria.rawValue, structure: CategoryStruct.self, view: self)
+        
+        // Request top sellers
+//        rs.getJSONData(dataType: WebServicesEnum.produtosMaisVendidos.rawValue, structure: TopSeller.self, view: self)
     }
     
+    // Banners start
     public func putBanners(bs: BannerStruct) {
         if(bs.data.count > 0) {
             // Set banner page controller
             bannerPgCtrl.isHidden = false
             bannerPgCtrl.numberOfPages = bs.data.count
-            bannerPgCtrl.currentPage = currentImageIndex
+            bannerPgCtrl.currentPage = currentBannerIndex
             
             for img in bs.data {
                 var b = UIImage()
@@ -73,11 +105,13 @@ class ViewController: UIViewController {
                 }
             }
             
-            // set image and tap recognizer
+            activityBannerLoading.stopAnimating()
+            
+            // set image and tap/swipe recognizer
             let tapBannerGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(bannerTapped(tapGestureRecognizer:)))
             bannerImageView.isUserInteractionEnabled = true
             bannerImageView.addGestureRecognizer(tapBannerGestureRecognizer)
-            bannerImageView.image = bannerImages[currentImageIndex]
+            bannerImageView.image = bannerImages[currentBannerIndex]
             
             let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(bannerSwiped(gesture:)))
             swipeRight.direction = UISwipeGestureRecognizerDirection.right
@@ -91,7 +125,7 @@ class ViewController: UIViewController {
     
     // open banner link
     func bannerTapped(tapGestureRecognizer: UITapGestureRecognizer) {
-        let url = URL(string: bannerLinks[currentImageIndex])
+        let url = URL(string: bannerLinks[currentBannerIndex])
         if #available(iOS 10.0, *) {
             UIApplication.shared.open(url!, options: [:], completionHandler: nil)
         } else {
@@ -104,18 +138,18 @@ class ViewController: UIViewController {
         if let swipeGesture = gesture as? UISwipeGestureRecognizer{
             switch swipeGesture.direction {
             case UISwipeGestureRecognizerDirection.right:
-                if(currentImageIndex < bannerImages.count - 1) {
-                    currentImageIndex += 1
-                    bannerImageView.image = bannerImages[currentImageIndex]
-                    bannerPgCtrl.currentPage = currentImageIndex
+                if(currentBannerIndex < bannerImages.count - 1) {
+                    currentBannerIndex += 1
+                    bannerImageView.image = bannerImages[currentBannerIndex]
+                    bannerPgCtrl.currentPage = currentBannerIndex
                 }
                 
                 break
             case UISwipeGestureRecognizerDirection.left:
-                if(currentImageIndex > 0) {
-                    currentImageIndex -= 1
-                    bannerImageView.image = bannerImages[currentImageIndex]
-                    bannerPgCtrl.currentPage = currentImageIndex
+                if(currentBannerIndex > 0) {
+                    currentBannerIndex -= 1
+                    bannerImageView.image = bannerImages[currentBannerIndex]
+                    bannerPgCtrl.currentPage = currentBannerIndex
                 }
                 
                 break
@@ -124,6 +158,88 @@ class ViewController: UIViewController {
             }
         }
     }
+    // Banners end
+    
+    // Categories start
+    public func putCategories(cat: CategoryStruct) {
+
+        if(cat.data.count > 0) {
+            print("total cat: \(cat.data.count)")
+            
+            for c in cat.data {
+                var b = UIImage()
+                var l = String()
+                var d = String()
+                
+                if let url = NSURL(string: c.urlImagem) {
+                    if let data = NSData(contentsOf: url as URL) {
+                        b = UIImage(data: data as Data)!
+                        l = WebServicesEnum.produto.rawValue.appending("?offset=0&limit=10&cateogoriaId=\(c.id)")
+                        d = c.descricao
+                        
+                        categoriesImages.append(b)
+                        categoriesLinks.append(l)
+                        categoriesDescriptions.append(d)
+                    }
+                }
+            }
+            
+            drawCategories()
+            activityCategoriesLoading.stopAnimating()
+        }
+    }
+    
+    func drawCategories() {
+        var index = 0
+        
+        let imageWidth: CGFloat = 75
+        let imageHeight: CGFloat = 75
+        let yPosition:CGFloat = 10
+        var xPosition:CGFloat = 20
+        var scrollViewContentSize:CGFloat = 0
+        
+        for cats in categoriesImages {
+            let ci = UIImageView()
+            ci.isUserInteractionEnabled = true
+            ci.image = cats
+            ci.contentMode = UIViewContentMode.scaleAspectFit
+            
+            ci.frame.size.width = imageWidth
+            ci.frame.size.height = imageHeight
+            ci.center = self.view.center
+            ci.frame.origin.y = yPosition
+            ci.frame.origin.x = xPosition
+            
+            categoriesScrollView.addSubview(ci)
+            
+            let label = UILabel()
+            label.text = categoriesDescriptions[index]
+            label.textColor = .black
+            label.contentMode = UIViewContentMode.scaleAspectFit
+            label.frame.size.width = imageWidth
+            label.frame.size.height = 30
+            label.numberOfLines = 2
+            label.adjustsFontSizeToFitWidth = true
+            label.textAlignment = .center
+            label.baselineAdjustment = .alignBaselines
+            label.frame.origin.y = yPosition + imageHeight
+            label.frame.origin.x = xPosition
+            label.layoutIfNeeded()
+            categoriesScrollView.addSubview(label)
+            
+            let spacer:CGFloat = 20
+            xPosition += imageWidth + spacer
+            scrollViewContentSize += imageWidth + spacer
+            
+            categoriesScrollView.contentSize = CGSize(width: scrollViewContentSize, height: imageHeight)
+            
+            index += 1
+            print(index)
+            print(cats.size)
+        }
+     }
+    // Categories end
+    
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)

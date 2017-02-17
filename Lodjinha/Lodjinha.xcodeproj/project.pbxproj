@@ -19,6 +19,8 @@
 		7B763C951E549E93003C9D6D /* LodjinhaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B763C941E549E93003C9D6D /* LodjinhaTests.swift */; };
 		7B763CA01E549E94003C9D6D /* LodjinhaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B763C9F1E549E94003C9D6D /* LodjinhaUITests.swift */; };
 		7BBC17D71E562BA100578EC4 /* WebServicesEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BBC17D61E562BA100578EC4 /* WebServicesEnum.swift */; };
+		7BBC17DB1E56919800578EC4 /* CategoryStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BBC17DA1E56919700578EC4 /* CategoryStruct.swift */; };
+		7BBC17DD1E56C95200578EC4 /* TopSellerStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BBC17DC1E56C95200578EC4 /* TopSellerStruct.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,8 @@
 		7B763C9F1E549E94003C9D6D /* LodjinhaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LodjinhaUITests.swift; sourceTree = "<group>"; };
 		7B763CA11E549E94003C9D6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7BBC17D61E562BA100578EC4 /* WebServicesEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebServicesEnum.swift; sourceTree = "<group>"; };
+		7BBC17DA1E56919700578EC4 /* CategoryStruct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryStruct.swift; sourceTree = "<group>"; };
+		7BBC17DC1E56C95200578EC4 /* TopSellerStruct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopSellerStruct.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +102,8 @@
 				7B71948A1E55412E0050ED74 /* BannerStruct.swift */,
 				7B71948C1E5541CD0050ED74 /* DataStruct.swift */,
 				7BBC17D61E562BA100578EC4 /* WebServicesEnum.swift */,
+				7BBC17DA1E56919700578EC4 /* CategoryStruct.swift */,
+				7BBC17DC1E56C95200578EC4 /* TopSellerStruct.swift */,
 			);
 			name = JsonStructures;
 			sourceTree = "<group>";
@@ -296,10 +302,12 @@
 			files = (
 				7B71948D1E5541CD0050ED74 /* DataStruct.swift in Sources */,
 				7B71948B1E55412E0050ED74 /* BannerStruct.swift in Sources */,
+				7BBC17DB1E56919800578EC4 /* CategoryStruct.swift in Sources */,
 				7B514E341E5577E7001DB41D /* RequestService.swift in Sources */,
 				7B763C821E549E93003C9D6D /* ViewController.swift in Sources */,
 				7B763C801E549E93003C9D6D /* AppDelegate.swift in Sources */,
 				7BBC17D71E562BA100578EC4 /* WebServicesEnum.swift in Sources */,
+				7BBC17DD1E56C95200578EC4 /* TopSellerStruct.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

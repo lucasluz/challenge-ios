@@ -9,10 +9,13 @@
 import Foundation
 
 struct DataStruct {
-    var data = [Fields]()
+    var data = Array<Fields>()
     
     struct Fields
     {
     
+        init(dict: NSDictionary) {
+            
+        }
     }
 }

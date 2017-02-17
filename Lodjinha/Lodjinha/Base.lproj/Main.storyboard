@@ -50,67 +50,82 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TlA-Li-F9N">
-                                <rect key="frame" x="0.0" y="229" width="375" height="100"/>
-                                <color key="backgroundColor" red="0.1292381520040401" green="1" blue="0.39875828526647239" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-                            </scrollView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mais vendidos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U0n-0O-Ang">
-                                <rect key="frame" x="16" y="337" width="110" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MQF-TH-jix">
-                                <rect key="frame" x="0.0" y="366" width="375" height="252"/>
-                                <color key="backgroundColor" red="1" green="0.26807569790000002" blue="0.29386377159999999" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="0.0" y="229" width="375" height="129"/>
+                                <subviews>
+                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="Gg0-6c-r72">
+                                        <rect key="frame" x="177" y="54" width="20" height="20"/>
+                                        <color key="color" cocoaTouchSystemColor="darkTextColor"/>
+                                    </activityIndicatorView>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="252" id="GKP-0w-1SW"/>
+                                    <constraint firstItem="Gg0-6c-r72" firstAttribute="top" secondItem="TlA-Li-F9N" secondAttribute="top" constant="54" id="Df7-lA-Iwu"/>
+                                    <constraint firstAttribute="bottom" secondItem="Gg0-6c-r72" secondAttribute="bottom" constant="55" id="nBX-4X-wi6"/>
+                                    <constraint firstAttribute="trailing" secondItem="Gg0-6c-r72" secondAttribute="trailing" constant="178" id="uIb-S2-dh3"/>
+                                    <constraint firstItem="Gg0-6c-r72" firstAttribute="centerY" secondItem="TlA-Li-F9N" secondAttribute="centerY" id="vQG-8f-Tjo"/>
+                                    <constraint firstItem="Gg0-6c-r72" firstAttribute="centerX" secondItem="TlA-Li-F9N" secondAttribute="centerX" id="wlO-De-Tzi"/>
                                 </constraints>
-                                <color key="separatorColor" red="1" green="0.26807569785683172" blue="0.29386377155028587" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                            </scrollView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MQF-TH-jix">
+                                <rect key="frame" x="0.0" y="395" width="375" height="224"/>
+                                <color key="backgroundColor" red="1" green="0.26807569790000002" blue="0.29386377159999999" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="separatorColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" red="1" green="0.220149271209375" blue="0.24161914593746359" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                             </tableView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bxu-G7-tfs">
                                 <rect key="frame" x="0.0" y="64" width="375" height="128"/>
-                                <color key="backgroundColor" red="0.22987357089999999" green="0.38282138580000002" blue="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                 <gestureRecognizers/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="Lb2-qy-D1u"/>
-                                </constraints>
                             </imageView>
                             <pageControl hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="NZG-Pg-WEG">
                                 <rect key="frame" x="168" y="155" width="39" height="37"/>
                                 <color key="pageIndicatorTintColor" red="1" green="0.94734471497269235" blue="0.085284976817706193" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="currentPageIndicatorTintColor" red="1" green="0.26807569790000002" blue="0.29386377159999999" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                             </pageControl>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="RzW-0r-6l7">
+                                <rect key="frame" x="177" y="118" width="20" height="20"/>
+                                <color key="color" cocoaTouchSystemColor="darkTextColor"/>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mais vendidos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U0n-0O-Ang">
+                                <rect key="frame" x="16" y="366" width="110" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="NZG-Pg-WEG" firstAttribute="bottom" secondItem="bxu-G7-tfs" secondAttribute="bottom" id="6jR-c3-Tdv"/>
-                            <constraint firstItem="pUJ-p9-JXg" firstAttribute="top" secondItem="MQF-TH-jix" secondAttribute="bottom" id="8aW-Q8-iRi"/>
-                            <constraint firstItem="U0n-0O-Ang" firstAttribute="top" secondItem="TlA-Li-F9N" secondAttribute="bottom" constant="8" symbolic="YES" id="9fc-Y6-JC4"/>
-                            <constraint firstItem="q6D-he-iP0" firstAttribute="trailing" secondItem="bxu-G7-tfs" secondAttribute="trailing" id="B3i-g9-DfK"/>
-                            <constraint firstItem="MQF-TH-jix" firstAttribute="trailing" secondItem="pUJ-p9-JXg" secondAttribute="trailing" id="Bme-TK-fAu"/>
-                            <constraint firstItem="9pn-Mf-uUU" firstAttribute="top" secondItem="bxu-G7-tfs" secondAttribute="bottom" constant="8" symbolic="YES" id="EQm-6S-piH"/>
-                            <constraint firstItem="TlA-Li-F9N" firstAttribute="trailing" secondItem="MQF-TH-jix" secondAttribute="trailing" id="Rpz-PG-q73"/>
-                            <constraint firstItem="q6D-he-iP0" firstAttribute="leading" secondItem="bxu-G7-tfs" secondAttribute="leading" id="TJE-w1-5kg"/>
-                            <constraint firstAttribute="trailing" secondItem="q6D-he-iP0" secondAttribute="trailing" id="UHJ-bg-q1H"/>
-                            <constraint firstItem="TlA-Li-F9N" firstAttribute="top" secondItem="9pn-Mf-uUU" secondAttribute="bottom" constant="8" symbolic="YES" id="Wsb-QJ-qka"/>
-                            <constraint firstItem="q6D-he-iP0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="WzL-bK-PLQ"/>
-                            <constraint firstItem="bxu-G7-tfs" firstAttribute="leading" secondItem="TlA-Li-F9N" secondAttribute="leading" id="YIc-WX-9MD"/>
-                            <constraint firstItem="bxu-G7-tfs" firstAttribute="top" secondItem="q6D-he-iP0" secondAttribute="bottom" id="ZCj-Ei-HHd"/>
-                            <constraint firstItem="q6D-he-iP0" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="by3-QU-jYy"/>
-                            <constraint firstItem="MQF-TH-jix" firstAttribute="leading" secondItem="pUJ-p9-JXg" secondAttribute="leading" id="cae-rU-s2e"/>
-                            <constraint firstItem="9pn-Mf-uUU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="fCS-HK-Dfp"/>
-                            <constraint firstItem="NZG-Pg-WEG" firstAttribute="centerX" secondItem="bxu-G7-tfs" secondAttribute="centerX" id="fJt-Af-KuA"/>
-                            <constraint firstItem="MQF-TH-jix" firstAttribute="top" secondItem="U0n-0O-Ang" secondAttribute="bottom" constant="8" symbolic="YES" id="gaz-iJ-2mM"/>
-                            <constraint firstItem="TlA-Li-F9N" firstAttribute="leading" secondItem="MQF-TH-jix" secondAttribute="leading" id="hVH-sS-DRC"/>
-                            <constraint firstItem="bxu-G7-tfs" firstAttribute="trailing" secondItem="TlA-Li-F9N" secondAttribute="trailing" id="lrH-Qh-UEN"/>
-                            <constraint firstItem="9pn-Mf-uUU" firstAttribute="leading" secondItem="U0n-0O-Ang" secondAttribute="leading" id="nV5-76-DGS"/>
-                            <constraint firstItem="pUJ-p9-JXg" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="sgl-nQ-jJb"/>
+                            <constraint firstItem="q6D-he-iP0" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="36h-Hf-oNO"/>
+                            <constraint firstItem="q6D-he-iP0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="4tm-2U-Yao"/>
+                            <constraint firstItem="bxu-G7-tfs" firstAttribute="top" secondItem="q6D-he-iP0" secondAttribute="bottom" id="5th-Bb-MA4"/>
+                            <constraint firstItem="q6D-he-iP0" firstAttribute="leading" secondItem="bxu-G7-tfs" secondAttribute="leading" id="D2e-oH-O3p"/>
+                            <constraint firstItem="TlA-Li-F9N" firstAttribute="leading" secondItem="MQF-TH-jix" secondAttribute="leading" id="E3E-QL-B6l"/>
+                            <constraint firstAttribute="trailing" secondItem="q6D-he-iP0" secondAttribute="trailing" id="Htr-nu-nJp"/>
+                            <constraint firstItem="MQF-TH-jix" firstAttribute="trailing" secondItem="pUJ-p9-JXg" secondAttribute="trailing" id="IkL-VB-AXv"/>
+                            <constraint firstItem="MQF-TH-jix" firstAttribute="top" secondItem="U0n-0O-Ang" secondAttribute="bottom" constant="8" symbolic="YES" id="KlG-B8-u9i"/>
+                            <constraint firstItem="9pn-Mf-uUU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="LmY-GL-VS7"/>
+                            <constraint firstItem="q6D-he-iP0" firstAttribute="trailing" secondItem="bxu-G7-tfs" secondAttribute="trailing" id="NHz-Lv-U7n"/>
+                            <constraint firstItem="q6D-he-iP0" firstAttribute="centerX" secondItem="RzW-0r-6l7" secondAttribute="centerX" id="OuI-nI-jem"/>
+                            <constraint firstItem="TlA-Li-F9N" firstAttribute="top" secondItem="9pn-Mf-uUU" secondAttribute="bottom" constant="8" symbolic="YES" id="OuP-l5-iM3"/>
+                            <constraint firstItem="9pn-Mf-uUU" firstAttribute="leading" secondItem="U0n-0O-Ang" secondAttribute="leading" id="Pa9-If-5kG"/>
+                            <constraint firstItem="U0n-0O-Ang" firstAttribute="top" secondItem="TlA-Li-F9N" secondAttribute="bottom" constant="8" symbolic="YES" id="PaZ-UK-aUV"/>
+                            <constraint firstItem="bxu-G7-tfs" firstAttribute="trailing" secondItem="TlA-Li-F9N" secondAttribute="trailing" id="PeH-EK-eOA"/>
+                            <constraint firstItem="pUJ-p9-JXg" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="RCg-qR-VtU"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="MQF-TH-jix" secondAttribute="bottom" constant="48" id="Ugb-pa-QwK"/>
+                            <constraint firstItem="MQF-TH-jix" firstAttribute="leading" secondItem="pUJ-p9-JXg" secondAttribute="leading" id="XH6-qk-5oe"/>
+                            <constraint firstItem="bxu-G7-tfs" firstAttribute="leading" secondItem="TlA-Li-F9N" secondAttribute="leading" id="Y9l-Nb-DlR"/>
+                            <constraint firstItem="RzW-0r-6l7" firstAttribute="centerX" secondItem="NZG-Pg-WEG" secondAttribute="centerX" id="b5u-zP-5E6"/>
+                            <constraint firstItem="TlA-Li-F9N" firstAttribute="trailing" secondItem="MQF-TH-jix" secondAttribute="trailing" id="dd3-hw-D5a"/>
+                            <constraint firstItem="bxu-G7-tfs" firstAttribute="bottom" secondItem="NZG-Pg-WEG" secondAttribute="bottom" id="hqE-ED-IYt"/>
+                            <constraint firstItem="bxu-G7-tfs" firstAttribute="centerY" secondItem="RzW-0r-6l7" secondAttribute="centerY" id="mgx-WJ-Ped"/>
+                            <constraint firstItem="9pn-Mf-uUU" firstAttribute="top" secondItem="bxu-G7-tfs" secondAttribute="bottom" constant="8" symbolic="YES" id="uid-yU-s6f"/>
+                            <constraint firstItem="NZG-Pg-WEG" firstAttribute="top" secondItem="RzW-0r-6l7" secondAttribute="bottom" constant="17" id="xzQ-3z-tM6"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityBannerLoading" destination="RzW-0r-6l7" id="xml-G6-uW7"/>
+                        <outlet property="activityCategoriesLoading" destination="Gg0-6c-r72" id="NjD-wY-uWZ"/>
                         <outlet property="bannerImageView" destination="bxu-G7-tfs" id="gvq-2T-P67"/>
                         <outlet property="bannerPgCtrl" destination="NZG-Pg-WEG" id="ndj-rz-MhZ"/>
+                        <outlet property="categoriesScrollView" destination="TlA-Li-F9N" id="Pm1-uf-VwG"/>
                         <outlet property="homeTabBarButton" destination="NYT-ne-QuL" id="kwB-X7-Jdx"/>
                         <outlet property="navBar" destination="q6D-he-iP0" id="be7-MC-dPF"/>
                         <outlet property="productsTableView" destination="MQF-TH-jix" id="zFT-CD-uQY"/>
