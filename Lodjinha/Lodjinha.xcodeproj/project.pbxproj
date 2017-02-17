@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		7B00DC4A1E54CDF6000EB3D4 /* Pacifico-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7B00DC491E54CDF5000EB3D4 /* Pacifico-Regular.ttf */; };
+		7B514E341E5577E7001DB41D /* RequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B514E331E5577E7001DB41D /* RequestService.swift */; };
+		7B71948B1E55412E0050ED74 /* BannerStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B71948A1E55412E0050ED74 /* BannerStruct.swift */; };
+		7B71948D1E5541CD0050ED74 /* DataStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B71948C1E5541CD0050ED74 /* DataStruct.swift */; };
 		7B763C801E549E93003C9D6D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B763C7F1E549E93003C9D6D /* AppDelegate.swift */; };
 		7B763C821E549E93003C9D6D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B763C811E549E93003C9D6D /* ViewController.swift */; };
 		7B763C851E549E93003C9D6D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B763C831E549E93003C9D6D /* Main.storyboard */; };
@@ -15,6 +18,7 @@
 		7B763C8A1E549E93003C9D6D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B763C881E549E93003C9D6D /* LaunchScreen.storyboard */; };
 		7B763C951E549E93003C9D6D /* LodjinhaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B763C941E549E93003C9D6D /* LodjinhaTests.swift */; };
 		7B763CA01E549E94003C9D6D /* LodjinhaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B763C9F1E549E94003C9D6D /* LodjinhaUITests.swift */; };
+		7BBC17D71E562BA100578EC4 /* WebServicesEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BBC17D61E562BA100578EC4 /* WebServicesEnum.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +40,9 @@
 
 /* Begin PBXFileReference section */
 		7B00DC491E54CDF5000EB3D4 /* Pacifico-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Pacifico-Regular.ttf"; path = "../../../../Downloads/Pacifico/Pacifico-Regular.ttf"; sourceTree = "<group>"; };
+		7B514E331E5577E7001DB41D /* RequestService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestService.swift; sourceTree = "<group>"; };
+		7B71948A1E55412E0050ED74 /* BannerStruct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerStruct.swift; sourceTree = "<group>"; };
+		7B71948C1E5541CD0050ED74 /* DataStruct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStruct.swift; sourceTree = "<group>"; };
 		7B763C7C1E549E93003C9D6D /* Lodjinha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lodjinha.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B763C7F1E549E93003C9D6D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7B763C811E549E93003C9D6D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +56,7 @@
 		7B763C9B1E549E93003C9D6D /* LodjinhaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LodjinhaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B763C9F1E549E94003C9D6D /* LodjinhaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LodjinhaUITests.swift; sourceTree = "<group>"; };
 		7B763CA11E549E94003C9D6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7BBC17D61E562BA100578EC4 /* WebServicesEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebServicesEnum.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +92,16 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
+		7B7194891E5541090050ED74 /* JsonStructures */ = {
+			isa = PBXGroup;
+			children = (
+				7B71948A1E55412E0050ED74 /* BannerStruct.swift */,
+				7B71948C1E5541CD0050ED74 /* DataStruct.swift */,
+				7BBC17D61E562BA100578EC4 /* WebServicesEnum.swift */,
+			);
+			name = JsonStructures;
+			sourceTree = "<group>";
+		};
 		7B763C731E549E93003C9D6D = {
 			isa = PBXGroup;
 			children = (
@@ -108,12 +126,14 @@
 		7B763C7E1E549E93003C9D6D /* Lodjinha */ = {
 			isa = PBXGroup;
 			children = (
+				7B7194891E5541090050ED74 /* JsonStructures */,
 				7B763C7F1E549E93003C9D6D /* AppDelegate.swift */,
 				7B763C811E549E93003C9D6D /* ViewController.swift */,
 				7B763C831E549E93003C9D6D /* Main.storyboard */,
 				7B763C861E549E93003C9D6D /* Assets.xcassets */,
 				7B763C881E549E93003C9D6D /* LaunchScreen.storyboard */,
 				7B763C8B1E549E93003C9D6D /* Info.plist */,
+				7B514E331E5577E7001DB41D /* RequestService.swift */,
 			);
 			path = Lodjinha;
 			sourceTree = "<group>";
@@ -274,8 +294,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B71948D1E5541CD0050ED74 /* DataStruct.swift in Sources */,
+				7B71948B1E55412E0050ED74 /* BannerStruct.swift in Sources */,
+				7B514E341E5577E7001DB41D /* RequestService.swift in Sources */,
 				7B763C821E549E93003C9D6D /* ViewController.swift in Sources */,
 				7B763C801E549E93003C9D6D /* AppDelegate.swift in Sources */,
+				7BBC17D71E562BA100578EC4 /* WebServicesEnum.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
