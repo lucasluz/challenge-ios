@@ -79,7 +79,7 @@ class ViewController: UIViewController {
         rs.getJSONData(dataType: WebServicesEnum.categoria.rawValue, structure: CategoryStruct.self, view: self)
         
         // Request top sellers
-//        rs.getJSONData(dataType: WebServicesEnum.produtosMaisVendidos.rawValue, structure: TopSeller.self, view: self)
+        rs.getJSONData(dataType: WebServicesEnum.produtosMaisVendidos.rawValue, structure: TopSeller.self, view: self)
     }
     
     // Banners start
@@ -164,8 +164,6 @@ class ViewController: UIViewController {
     public func putCategories(cat: CategoryStruct) {
 
         if(cat.data.count > 0) {
-            print("total cat: \(cat.data.count)")
-            
             for c in cat.data {
                 var b = UIImage()
                 var l = String()
@@ -234,12 +232,26 @@ class ViewController: UIViewController {
             categoriesScrollView.contentSize = CGSize(width: scrollViewContentSize, height: imageHeight)
             
             index += 1
-            print(index)
-            print(cats.size)
         }
      }
     // Categories end
     
+    // Top Sellers start
+    public func putTopSellers(ts: TopSeller) {
+        if(ts.data.count > 0) {
+            print("total ts: \(ts.data.count)")
+            print(ts.data)
+            
+            productsTableView.numberOfRows(inSection: ts.data.count)
+            
+            let label = UILabel()
+            label.text = "teste"
+            label.textColor = .black
+            
+            productsTableView.addSubview(label)
+        }
+    }
+    // Top Sellers end
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)

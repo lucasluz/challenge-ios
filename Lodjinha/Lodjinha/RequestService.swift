@@ -53,7 +53,7 @@ class RequestService {
                                 
                                 case is TopSeller.Type:
                                     DispatchQueue.main.asyncAfter(deadline: time, execute: {
-                                        view.putCategories(cat: json as! TopSeller)
+                                        view.putTopSellers(ts: json as! TopSeller)
                                     })
                                     break
                                 
@@ -89,6 +89,9 @@ class RequestService {
                 
                 case is CategoryStruct.Type:
                     return self.getCategories(jsonArray: json)
+                
+                case is TopSeller.Type:
+                    return self.getTopSellers(jsonArray: json)
                 
                 default:
                 print("service undefined")
@@ -127,7 +130,7 @@ class RequestService {
         var ts = TopSeller()
         
         for f in jsonArray["data"] as! NSArray {
-            let tpFields = TopSeller.Fields.init(dict: f as! NSDictionary)
+            let tsFields = TopSeller.Fields.init(dict: f as! NSDictionary)
             ts.data.append(tsFields)
         }
         

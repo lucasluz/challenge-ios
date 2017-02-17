@@ -19,7 +19,7 @@ struct TopSeller {
         var descricao : String
         var precoDe : Double
         var precoPor : Double
-        var categorias : Array<CategoryStruct>
+        var categorias : NSDictionary
         
         init(dict: NSDictionary) {
             id = dict.value(forKey: "id") as! Int
@@ -28,7 +28,7 @@ struct TopSeller {
             descricao = dict.value(forKey: "descricao") as! String
             precoDe = dict.value(forKey: "precoDe") as! Double
             precoPor = dict.value(forKey: "precoPor") as! Double
-            categorias = dict.value(forKey: "descricao") as! Array<CategoryStruct>
+            categorias = dict.value(forKey: "categoria") as! NSDictionary
         }
     }
     
