@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B00DC4A1E54CDF6000EB3D4 /* Pacifico-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7B00DC491E54CDF5000EB3D4 /* Pacifico-Regular.ttf */; };
+		7B514E341E5577E7001DB41D /* RequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B514E331E5577E7001DB41D /* RequestService.swift */; };
+		7B71948B1E55412E0050ED74 /* BannerStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B71948A1E55412E0050ED74 /* BannerStruct.swift */; };
+		7B71948D1E5541CD0050ED74 /* DataStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B71948C1E5541CD0050ED74 /* DataStruct.swift */; };
 		7B763C801E549E93003C9D6D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B763C7F1E549E93003C9D6D /* AppDelegate.swift */; };
 		7B763C821E549E93003C9D6D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B763C811E549E93003C9D6D /* ViewController.swift */; };
 		7B763C851E549E93003C9D6D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B763C831E549E93003C9D6D /* Main.storyboard */; };
@@ -14,6 +18,9 @@
 		7B763C8A1E549E93003C9D6D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B763C881E549E93003C9D6D /* LaunchScreen.storyboard */; };
 		7B763C951E549E93003C9D6D /* LodjinhaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B763C941E549E93003C9D6D /* LodjinhaTests.swift */; };
 		7B763CA01E549E94003C9D6D /* LodjinhaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B763C9F1E549E94003C9D6D /* LodjinhaUITests.swift */; };
+		7BBC17D71E562BA100578EC4 /* WebServicesEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BBC17D61E562BA100578EC4 /* WebServicesEnum.swift */; };
+		7BBC17DB1E56919800578EC4 /* CategoryStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BBC17DA1E56919700578EC4 /* CategoryStruct.swift */; };
+		7BBC17DD1E56C95200578EC4 /* TopSellerStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BBC17DC1E56C95200578EC4 /* TopSellerStruct.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +41,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7B00DC491E54CDF5000EB3D4 /* Pacifico-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Pacifico-Regular.ttf"; path = "../../../../Downloads/Pacifico/Pacifico-Regular.ttf"; sourceTree = "<group>"; };
+		7B514E331E5577E7001DB41D /* RequestService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestService.swift; sourceTree = "<group>"; };
+		7B71948A1E55412E0050ED74 /* BannerStruct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerStruct.swift; sourceTree = "<group>"; };
+		7B71948C1E5541CD0050ED74 /* DataStruct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStruct.swift; sourceTree = "<group>"; };
 		7B763C7C1E549E93003C9D6D /* Lodjinha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lodjinha.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B763C7F1E549E93003C9D6D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7B763C811E549E93003C9D6D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +58,9 @@
 		7B763C9B1E549E93003C9D6D /* LodjinhaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LodjinhaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B763C9F1E549E94003C9D6D /* LodjinhaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LodjinhaUITests.swift; sourceTree = "<group>"; };
 		7B763CA11E549E94003C9D6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7BBC17D61E562BA100578EC4 /* WebServicesEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebServicesEnum.swift; sourceTree = "<group>"; };
+		7BBC17DA1E56919700578EC4 /* CategoryStruct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryStruct.swift; sourceTree = "<group>"; };
+		7BBC17DC1E56C95200578EC4 /* TopSellerStruct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopSellerStruct.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,9 +88,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7B00DC4B1E54CEBF000EB3D4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7B00DC491E54CDF5000EB3D4 /* Pacifico-Regular.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		7B7194891E5541090050ED74 /* JsonStructures */ = {
+			isa = PBXGroup;
+			children = (
+				7B71948A1E55412E0050ED74 /* BannerStruct.swift */,
+				7B71948C1E5541CD0050ED74 /* DataStruct.swift */,
+				7BBC17D61E562BA100578EC4 /* WebServicesEnum.swift */,
+				7BBC17DA1E56919700578EC4 /* CategoryStruct.swift */,
+				7BBC17DC1E56C95200578EC4 /* TopSellerStruct.swift */,
+			);
+			name = JsonStructures;
+			sourceTree = "<group>";
+		};
 		7B763C731E549E93003C9D6D = {
 			isa = PBXGroup;
 			children = (
+				7B00DC4B1E54CEBF000EB3D4 /* Resources */,
 				7B763C7E1E549E93003C9D6D /* Lodjinha */,
 				7B763C931E549E93003C9D6D /* LodjinhaTests */,
 				7B763C9E1E549E94003C9D6D /* LodjinhaUITests */,
@@ -97,12 +132,14 @@
 		7B763C7E1E549E93003C9D6D /* Lodjinha */ = {
 			isa = PBXGroup;
 			children = (
+				7B7194891E5541090050ED74 /* JsonStructures */,
 				7B763C7F1E549E93003C9D6D /* AppDelegate.swift */,
 				7B763C811E549E93003C9D6D /* ViewController.swift */,
 				7B763C831E549E93003C9D6D /* Main.storyboard */,
 				7B763C861E549E93003C9D6D /* Assets.xcassets */,
 				7B763C881E549E93003C9D6D /* LaunchScreen.storyboard */,
 				7B763C8B1E549E93003C9D6D /* Info.plist */,
+				7B514E331E5577E7001DB41D /* RequestService.swift */,
 			);
 			path = Lodjinha;
 			sourceTree = "<group>";
@@ -236,6 +273,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B763C8A1E549E93003C9D6D /* LaunchScreen.storyboard in Resources */,
+				7B00DC4A1E54CDF6000EB3D4 /* Pacifico-Regular.ttf in Resources */,
 				7B763C871E549E93003C9D6D /* Assets.xcassets in Resources */,
 				7B763C851E549E93003C9D6D /* Main.storyboard in Resources */,
 			);
@@ -262,8 +300,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B71948D1E5541CD0050ED74 /* DataStruct.swift in Sources */,
+				7B71948B1E55412E0050ED74 /* BannerStruct.swift in Sources */,
+				7BBC17DB1E56919800578EC4 /* CategoryStruct.swift in Sources */,
+				7B514E341E5577E7001DB41D /* RequestService.swift in Sources */,
 				7B763C821E549E93003C9D6D /* ViewController.swift in Sources */,
 				7B763C801E549E93003C9D6D /* AppDelegate.swift in Sources */,
+				7BBC17D71E562BA100578EC4 /* WebServicesEnum.swift in Sources */,
+				7BBC17DD1E56C95200578EC4 /* TopSellerStruct.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -514,6 +558,7 @@
 				7B763CA61E549E94003C9D6D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7B763CA71E549E94003C9D6D /* Build configuration list for PBXNativeTarget "LodjinhaTests" */ = {
 			isa = XCConfigurationList;
@@ -522,6 +567,7 @@
 				7B763CA91E549E94003C9D6D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7B763CAA1E549E94003C9D6D /* Build configuration list for PBXNativeTarget "LodjinhaUITests" */ = {
 			isa = XCConfigurationList;
@@ -530,6 +576,7 @@
 				7B763CAC1E549E94003C9D6D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
