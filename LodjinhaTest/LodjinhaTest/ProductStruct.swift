@@ -1,14 +1,14 @@
 //
-//  TopSellerStruct.swift
-//  Lodjinha
+//  ProductStruct.swift
+//  LodjinhaTest
 //
-//  Created by Lucas Luz on 17/02/17.
+//  Created by Lucas Luz on 19/02/17.
 //  Copyright © 2017 Lucas Luz. All rights reserved.
 //
 
 import Foundation
 
-struct TopSeller {
+struct ProductStruct {
     var data = Array<Fields>()
     
     struct Fields
@@ -31,5 +31,4 @@ struct TopSeller {
             categorias = dict.value(forKey: "categoria") as! NSDictionary
         }
     }
-    
 }
